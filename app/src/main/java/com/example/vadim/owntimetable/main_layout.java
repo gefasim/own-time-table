@@ -3,8 +3,13 @@ package com.example.vadim.owntimetable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.util.concurrent.ExecutionException;
 
@@ -19,11 +24,14 @@ public class main_layout extends AppCompatActivity {
         setContentView(R.layout.main_layout);
 
         mainTextView = (TextView)findViewById(R.id.mainTextView);
+        mainTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void onclick_TimeButton(View v) throws ExecutionException, InterruptedException {
         ApiManager ownapi = new ApiManager();
         String result = ownapi.execute().get();
-        mainTextView.setText(result);
+        LocalParser localParser = new LocalParser(Jsoup.parse(result)); //
+
+        mainTextView.setText( localParser.getTimeTable() );
     }
 }
