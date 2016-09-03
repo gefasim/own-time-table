@@ -8,12 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="61dp"
         android:text="Розклад сука"
-        android:id="@+id/getTime" />
+        android:id="@+id/getTime"
+        android:onClick="onclick_TimeButton"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textView" />
+        android:id="@+id/mainTextView" />
 
 </LinearLayout>
