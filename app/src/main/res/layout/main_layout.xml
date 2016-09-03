@@ -7,7 +7,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:text="Розклад сука"
+        android:text="@string/get_time_table"
         android:id="@+id/getTime"
         android:onClick="onclick_TimeButton"/>
 
