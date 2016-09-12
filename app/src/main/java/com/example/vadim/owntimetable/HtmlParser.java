@@ -1,6 +1,7 @@
 package com.example.vadim.owntimetable;
 
 import android.provider.DocumentsContract;
+import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,8 +18,14 @@ public class HtmlParser {
 
 
     public String getTimeTable() {
-        Document tempDoc = Jsoup.parse(doc.body().getElementsByClass("container").toString());
-        //return doc.body().getElementsByClass("container").toString();
-        return tempDoc.body().getElementsByClass("row").toString();
+        Document tempDoc = Jsoup.parse(doc.body().getElementsByClass("col-md-6").toString());
+
+        Log.v("H44",tempDoc.body().getElementsByTag("h4").text()); // All Day
+        Log.v("tableRow", tempDoc.body().getElementsByTag("table").text()); // All Lessons with date
+
+        // I don`t know what it is
+        // tempDoc.body().getElementsByClass("row").toString()
+
+        return tempDoc.body().getElementsByTag("table").text();
     }
 }

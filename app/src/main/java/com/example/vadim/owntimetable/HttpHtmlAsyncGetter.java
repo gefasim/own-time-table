@@ -61,7 +61,7 @@ public class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
 
             InputStream is = conn.getInputStream();
             StringWriter responseWriter = new StringWriter();
-            IOUtils.copy(is, responseWriter, "UTF-8");
+            IOUtils.copy(is, responseWriter, "windows-1251");
             responeBody = responseWriter.toString();
 
         } catch (Exception e) {
