@@ -8,10 +8,10 @@ import org.jsoup.nodes.Document;
 /**
  * Created by vov96 on 03.09.2016.
  */
-public class LocalParser {
+public class HtmlParser {
     Document doc;
 
-    public LocalParser(Document doc) {
+    public HtmlParser(Document doc) {
         this.doc = doc;
     }
 
