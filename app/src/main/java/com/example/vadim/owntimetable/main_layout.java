@@ -8,9 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.vadim.owntimetable.Object.TimeTable_day;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -18,6 +21,7 @@ import java.util.concurrent.ExecutionException;
  */
 public class main_layout extends AppCompatActivity {
     private TextView mainTextView;
+    CreateListLessons listLessons;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,23 @@ public class main_layout extends AppCompatActivity {
         String result = ownapi.execute().get();
         LocalParser localParser = new LocalParser(Jsoup.parse(result)); //
 
-        mainTextView.setText( localParser.getTimeTable() );
+        Log.e("sass", "Sasha21");
+        Log.e("doc", String.valueOf(result.length()));
+        //Log.e("doc", result);
+
+
+        listLessons = new CreateListLessons(localParser.getTimeTable());
+        List<TimeTable_day> tempList =  listLessons.mainCreateList();   // print
+        String temp = "";                                               // print
+
+        for (TimeTable_day tableDay : tempList){
+            temp += tableDay.getLesson_time() + " ";
+            temp += tableDay.getLesson_name() + "\n";
+        }
+
+
+        mainTextView.setText( temp ); // print
+
+
     }
 }

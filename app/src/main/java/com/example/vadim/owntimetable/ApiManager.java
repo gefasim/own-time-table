@@ -20,7 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by root on 9/3/16.
  */
 public class ApiManager extends AsyncTask<Void, Void, String> {
-    private String params = "faculty=0&teacher=&n=700&group=%CA%CD%B2%D2-31%B3%ED%F2&sdate=&edate=11.09.2016";
+    private String params = "faculty=0&teacher=&n=700&group=%CA%CD%B2%D2-31%B3%ED%F2&sdate=&edate=30.09.2016";
     private String url = "http://109.87.215.169/cgi-bin/timetable.cgi?n=700";
 
     @Override
@@ -61,7 +61,7 @@ public class ApiManager extends AsyncTask<Void, Void, String> {
 
             InputStream is = conn.getInputStream();
             StringWriter responseWriter = new StringWriter();
-            IOUtils.copy(is, responseWriter, "UTF-8");
+            IOUtils.copy(is, responseWriter, "windows-1251");
             responeBody = responseWriter.toString();
 
         } catch (Exception e) {
