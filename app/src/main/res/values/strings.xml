@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">owntimetable</string>
     <string name="get_time_table">Розклад ска</string>
+    <string name="gefasim">"@gefasim"</string>
+    <string name="vlmcr">"@vlmcr"</string>
+    <string name="change_date">Change date</string>
 </resources>

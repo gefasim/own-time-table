@@ -6,23 +6,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by vov96 on 12.09.2016.
- */
-public class CreateListLessons {
-    List<Lesson> timeTableDays = new ArrayList<>();
+class CreateListLessons {
+    private List<Lesson> timeTableDays = new ArrayList<>();
+    private String lessons;
 
-
-    String lessons;
-
-    public CreateListLessons(String lessons) {
+    CreateListLessons(String lessons) {
         this.lessons = lessons;
     }
 
     List<Lesson> mainCreateList(){
         getFormatText();
-
         return pushToList(getFormatText());
+    }
+
+    private String[] getFormatText() {
+        String[] secondArr = lessons.split(" ");
+        String formattedText = "";
+        String[] formattedTextArr;
+        for (int i = 0; i < secondArr.length; i++) {
+            formattedText += secondArr[i] + " " ;
+            if (i + 1 == secondArr.length) {
+                formattedTextArr = formattedText.split("\n");
+                System.out.println(Arrays.toString(formattedTextArr));
+                return formattedTextArr;
+            }
+            try {
+                if (secondArr[i + 1].toCharArray()[2] == ':') {
+                    formattedText += "\n" ;
+                }
+            } catch (Exception ignored){}
+        }
+        return null;
     }
 
     private List<Lesson> pushToList(String[] formatText) {
@@ -38,7 +52,6 @@ public class CreateListLessons {
     }
 
     private static String writeLessonName(String lesson) {
-
         char[] lessonName = lesson.toCharArray();
         String lessonString = "";
 
@@ -48,8 +61,6 @@ public class CreateListLessons {
         return lessonString;
     }
 
-
-
     private static String writeDate(String lesson) {
         char[] date = lesson.toCharArray();
         String dataString = "";
@@ -58,28 +69,5 @@ public class CreateListLessons {
             dataString +=  date[i];
         }
         return dataString;
-    }
-
-    private String[] getFormatText() {
-        String[] secondArr = lessons.split(" ");
-        String formatedText = "";
-        String[] formatedTextArr;
-        for (int i = 0; i < secondArr.length; i++) {
-            //System.out.print(secondArr[i] + " ");
-            formatedText += secondArr[i] + " " ;
-            if (i + 1 == secondArr.length) {
-                formatedTextArr = formatedText.split("\n");
-                System.out.println(Arrays.toString(formatedTextArr));
-                return formatedTextArr;
-
-            }
-            try {
-                if (secondArr[i + 1].toCharArray()[2] == ':') {
-                    //System.out.println();
-                    formatedText += "\n" ;
-                }
-            } catch (Exception ignored){}
-        }
-        return null;
     }
 }

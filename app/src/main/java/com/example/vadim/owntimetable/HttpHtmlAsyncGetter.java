@@ -34,7 +34,6 @@ class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... voids) {
-        InputStream in = null;
         String responeBody;
         Document tempDoc;
         try {
