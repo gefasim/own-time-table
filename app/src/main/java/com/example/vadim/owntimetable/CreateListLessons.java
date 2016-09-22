@@ -1,6 +1,6 @@
 package com.example.vadim.owntimetable;
 
-import com.example.vadim.owntimetable.Object.TimeTable_day;
+import com.example.vadim.owntimetable.Model.Lesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.List;
  * Created by vov96 on 12.09.2016.
  */
 public class CreateListLessons {
-    List<TimeTable_day> timeTableDays = new ArrayList<>();
+    List<Lesson> timeTableDays = new ArrayList<>();
 
 
     String lessons;
@@ -19,19 +19,19 @@ public class CreateListLessons {
         this.lessons = lessons;
     }
 
-    List<TimeTable_day> mainCreateList(){
+    List<Lesson> mainCreateList(){
         getFormatText();
 
         return pushToList(getFormatText());
     }
 
-    private List<TimeTable_day> pushToList(String[] formatText) {
+    private List<Lesson> pushToList(String[] formatText) {
         for (String lesson : formatText){
             if (lesson.trim().length() < 12) {
-                timeTableDays.add(new TimeTable_day(lesson, ""));
+                timeTableDays.add(new Lesson(lesson, ""));
             } else {
                 System.out.println("writeLessonName-- "+ writeLessonName(lesson));
-                timeTableDays.add(new TimeTable_day(writeDate(lesson), writeLessonName(lesson)));
+                timeTableDays.add(new Lesson(writeDate(lesson), writeLessonName(lesson)));
             }
         }
         return timeTableDays;

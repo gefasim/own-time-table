@@ -24,16 +24,13 @@ public class main_layout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
-        HttpHtmlAsyncGetter ownapi = new HttpHtmlAsyncGetter();
-        String result = null;
-        try {
-            result = ownapi.execute().get();
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
-        HtmlParser localParser = new HtmlParser(Jsoup.parse(result));
 
-        listLessons = new CreateListLessons(localParser.getTimeTable());
+        HttpHtmlAsyncGetter own_api = new HttpHtmlAsyncGetter();
+        String result = null;
+        try {   result = own_api.execute().get();   }
+            catch (InterruptedException | ExecutionException e) {   e.printStackTrace();    }
+
+        listLessons = new CreateListLessons(result);
 
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);

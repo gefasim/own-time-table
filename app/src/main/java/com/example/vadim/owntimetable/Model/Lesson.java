@@ -1,13 +1,10 @@
-package com.example.vadim.owntimetable.Object;
+package com.example.vadim.owntimetable.Model;
 
-/**
- * Created by vov96 on 12.09.2016.
- */
-public class TimeTable_day {
-    String lesson_time;
-    String lesson_name;
+public class Lesson {
+    private String lesson_time;
+    private String lesson_name;
 
-    public TimeTable_day(String lesson_time, String lesson_name) {
+    public Lesson(String lesson_time, String lesson_name) {
         this.lesson_time = lesson_time;
         this.lesson_name = lesson_name;
     }
