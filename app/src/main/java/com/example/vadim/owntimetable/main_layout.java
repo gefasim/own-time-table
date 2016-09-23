@@ -1,7 +1,5 @@
 package com.example.vadim.owntimetable;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -45,14 +43,12 @@ public class main_layout extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.gefasim:
-                Toast.makeText(getApplicationContext(), "Alex best of the best", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Alex", Toast.LENGTH_SHORT).show();
                 break;
             case  R.id.vlmcr:
-                Toast.makeText(getApplicationContext(), "Pidor", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Vadim", Toast.LENGTH_SHORT).show();
                 break;
             case  R.id.new_game:
-                Intent intent = new Intent(getApplicationContext(), TestActivity.class);
-                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
