@@ -1,13 +1,11 @@
 package com.example.vadim.owntimetable;
 
 import android.os.AsyncTask;
-import android.util.Log;
+
+import com.example.vadim.owntimetable.models.TimePeriod;
 
 import org.apache.commons.io.IOUtils;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,15 +14,22 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
-
-class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
-    private String params = "faculty=0&teacher=&n=700&group=%CA%CD%B2%D2-31%B3%ED%F2&sdate=&edate=11.09.2016";
+/**
+ * Created by root on 9/3/16.
+ */
+public class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
+    private String params = "faculty=0&teacher=&n=700&group=%CA%CD%B2%D2-31%B3%ED%F2&sdate=";
     private String url = "http://109.87.215.169/cgi-bin/timetable.cgi?n=700";
+
+    public HttpHtmlAsyncGetter(TimePeriod timePeriod){
+        params += timePeriod.getBeginning_of_period();
+        params += "&edate="+ timePeriod.getEnd_of_period();
+    }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
     }
 
     @Override
@@ -32,10 +37,12 @@ class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
         super.onPostExecute(aVoid);
     }
 
+
     @Override
-    protected String doInBackground(Void... voids) {
+    protected String doInBackground(Void... v) {
+
+        InputStream in = null;
         String responeBody;
-        Document tempDoc;
         try {
 
             URL url = new URL(this.url);
@@ -63,17 +70,14 @@ class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
             IOUtils.copy(is, responseWriter, "windows-1251");
             responeBody = responseWriter.toString();
 
-
-            tempDoc = Jsoup.parse(Jsoup.parse(responeBody).body().getElementsByClass("col-md-6").toString());
-
         } catch (Exception e) {
 
             System.out.println(e.getMessage());
+
             return null;
 
         }
-        Log.e("Exit1", tempDoc.toString());
-        Log.e("Exit2", tempDoc.body().getElementsByTag("table").text());
-        return tempDoc.body().getElementsByTag("table").text();
+
+        return responeBody;
     }
 }

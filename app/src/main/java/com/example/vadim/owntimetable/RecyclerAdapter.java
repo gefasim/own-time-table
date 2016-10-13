@@ -7,43 +7,50 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.vadim.owntimetable.Model.Lesson;
+import com.example.vadim.owntimetable.models.TimeTableDayModel;
 
 import java.util.List;
 
 
-class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    private List<Lesson> mDataset;
+    private List<TimeTableDayModel> mDataset;
+    int idLayout;
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView mTextView;
-        TextView mTextView2;
 
-        ViewHolder(View v) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView mTextView;
+        public TextView mTextView2;
+
+        public ViewHolder(View v) {
             super(v);
             mTextView = (TextView) v.findViewById(R.id.tv_recycler_item);
             mTextView2 = (TextView) v.findViewById(R.id.tv_recycler_item2);
         }
     }
 
-    RecyclerAdapter(List<Lesson> dataset) {
+    public RecyclerAdapter(List<TimeTableDayModel> dataset, int idLayout) {
         mDataset = dataset;
+        this.idLayout = idLayout;
     }
 
     @Override
     public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                          int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card, parent, false);
+                .inflate(idLayout, parent, false);
 
-        return new ViewHolder(v);
+
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
         holder.mTextView.setText(mDataset.get(position).getLesson_time());
         holder.mTextView2.setText(mDataset.get(position).getLesson_name());
+
     }
 
     @Override
