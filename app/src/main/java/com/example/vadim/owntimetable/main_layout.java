@@ -117,7 +117,6 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
 
     }
 
-
     private void makeEmptyRecyclerView() {
         List<TimeTableDayModel> emptyList = new ArrayList<>();
         mLayoutManager = new GridLayoutManager(this, 2);
