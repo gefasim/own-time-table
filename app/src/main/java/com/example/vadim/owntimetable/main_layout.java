@@ -54,9 +54,6 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mLayoutManager = new GridLayoutManager(this, 2);
 
-
-
-
         if (isConn()) {
             makeRecyclerView();
         } else {

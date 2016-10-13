@@ -6,12 +6,6 @@
     android:orientation="vertical"
     tools:context=".main_layout">
 
-   <Button
-       android:text="Button"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/button2" />
-
    <include layout="@layout/recycler_view"/>
 
 </LinearLayout>
