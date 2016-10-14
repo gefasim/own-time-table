@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,7 +34,10 @@ import java.util.List;
  *
  */
 public class main_layout extends AppCompatActivity implements DateRangePickerFragment.OnDateRangeSelectedListener {
-    Repository rep = new Repository();
+    Repository rep;
+
+
+
     Calendar c = Calendar.getInstance();
 
     RecyclerView mRecyclerView;
@@ -48,6 +52,8 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
+        rep = new Repository(getApplicationContext());
+
         startPeriod = c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR);
         endPeriod = c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 2) + "." + c.get(Calendar.YEAR);
 
@@ -61,6 +67,8 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
             Toast.makeText(getApplicationContext(), "I need the Internet connection ):", Toast.LENGTH_SHORT).show();
             makeEmptyRecyclerView();
         }
+
+        Log.e("Dir main", getApplicationContext().getFilesDir() + "");
 
         {
     /*    try {
@@ -122,7 +130,8 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
         mLayoutManager = new GridLayoutManager(this, 2);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerAdapter(emptyList, R.layout.card);
+
+        mAdapter = new RecyclerAdapter(rep.getFromJSON(), R.layout.card);
         mRecyclerView.setAdapter(mAdapter);
     }
 
