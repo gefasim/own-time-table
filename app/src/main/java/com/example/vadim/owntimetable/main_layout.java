@@ -35,7 +35,6 @@ import java.util.List;
  */
 public class main_layout extends AppCompatActivity implements DateRangePickerFragment.OnDateRangeSelectedListener {
     Repository rep;
-
     Calendar c = Calendar.getInstance();
 
     RecyclerView mRecyclerView;
