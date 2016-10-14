@@ -31,7 +31,7 @@ ADDED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidM
 		ADDED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidManifest.xml:7:22-78
 application
 ADDED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidManifest.xml:10:5-22:19
-MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:cardview-v7:22.0.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:17:5-19:19
 MERGED from [com.android.support:support-v4:24.2.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
@@ -69,7 +69,7 @@ ADDED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidM
 		ADDED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidManifest.xml:19:27-74
 uses-sdk
 INJECTED from C:\Users\vov96.HOST\MY_timetable\own-time-table\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:cardview-v7:21.0.3] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:cardview-v7:22.0.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:21.0.3] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\AndroidManifest.xml:15:5-42
 MERGED from [com.android.support:support-v4:24.2.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:21:5-23:58
