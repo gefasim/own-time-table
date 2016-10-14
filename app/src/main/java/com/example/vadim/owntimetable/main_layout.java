@@ -37,7 +37,6 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
     Repository rep;
 
 
-
     Calendar c = Calendar.getInstance();
 
     RecyclerView mRecyclerView;

@@ -4,12 +4,12 @@
         "source": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
         "source": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
         "merged": "C:\\Users\\vov96.HOST\\MY_timetable\\own-time-table\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
