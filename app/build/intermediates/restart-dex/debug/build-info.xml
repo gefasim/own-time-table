@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="15"
+    density="mdpi"
+    format="8"
+    plugin-version="2.2.1"
+    timestamp="10440406123614"
+    token="-576802456077454656"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+
+    <build
+        timestamp="10258584982692"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="11456337509785"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
