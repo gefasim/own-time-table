@@ -6,7 +6,6 @@ import android.util.Log;
 import com.example.vadim.owntimetable.HttpHtmlAsyncGetter;
 import com.example.vadim.owntimetable.models.Lesson;
 import com.example.vadim.owntimetable.models.TimePeriod;
-import com.example.vadim.owntimetable.models.TimeTableDayModel;
 import com.example.vadim.owntimetable.models.TrueTimeTable;
 import com.example.vadim.owntimetable.parser.HtmlParser;
 import com.google.gson.Gson;
@@ -27,14 +26,12 @@ import java.util.concurrent.ExecutionException;
  *
  */
 public class Repository {
-    private List<TimeTableDayModel> lessonList;
+    private List<Lesson> lessonList;
     private List<TrueTimeTable> trueTimeTables;
     private HtmlParser htmlParser = new HtmlParser();
     private File file;
-    private Context context;
 
     public Repository(Context context) {
-        this.context = context;
         file = new File(context.getFilesDir(), "OwnTimeTable.json");
     }
 
@@ -55,12 +52,12 @@ public class Repository {
         lessonList = new ArrayList<>();
         for(TrueTimeTable table : trueTimeTables){
             for (Lesson lesson : table.getLessons()) {
-                lessonList.add(new TimeTableDayModel(lesson.getLessonTime(), lesson.getLessonName()));
+                lessonList.add(new Lesson(lesson.getLessonTime(), lesson.getLessonName()));
             }
         }
     }
 
-    public List<TimeTableDayModel> getListFor_RecyclerView() {
+    public List<Lesson> getListFor_RecyclerView() {
         return lessonList;
     }
 
@@ -70,10 +67,9 @@ public class Repository {
             Log.v(".JSON path ", file.getAbsolutePath());
             FileWriter fw = new FileWriter(file);
             fw.append(gson.toJson(trueTimeTables));
+            Log.v("write to json", trueTimeTables.size() + " elements");
             fw.flush();
             fw.close();
-
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -81,11 +77,12 @@ public class Repository {
     }
 
 
-    public List<TimeTableDayModel> getFromJSON() {
+    public List<Lesson> getFromJSON() {
         lessonList = new ArrayList<>();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
+            Log.v("Reader Json file", file.isFile() + " isFile");
             JsonParser jsonParser = new JsonParser();
             JsonArray array = jsonParser.parse(reader.readLine()).getAsJsonArray();
 
@@ -94,7 +91,7 @@ public class Repository {
             for (int i = 0; i < array.size(); i++) {
                 timeTable = gson.fromJson(array.get(i), TrueTimeTable.class);
                 for (Lesson item: timeTable.getLessons()) {
-                    lessonList.add(new TimeTableDayModel(
+                    lessonList.add(new Lesson(
                             item.getLessonTime(),
                             item.getLessonName()
                     ));

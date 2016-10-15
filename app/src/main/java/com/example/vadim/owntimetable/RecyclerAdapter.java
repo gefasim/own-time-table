@@ -7,14 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.vadim.owntimetable.models.TimeTableDayModel;
+import com.example.vadim.owntimetable.models.Lesson;
+
 
 import java.util.List;
 
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    private List<TimeTableDayModel> mDataset;
+    private List<Lesson> mDataset;
     int idLayout;
 
 
@@ -29,7 +30,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         }
     }
 
-    public RecyclerAdapter(List<TimeTableDayModel> dataset, int idLayout) {
+    public RecyclerAdapter(List<Lesson> dataset, int idLayout) {
         mDataset = dataset;
         this.idLayout = idLayout;
     }
@@ -48,8 +49,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.mTextView.setText(mDataset.get(position).getLesson_time());
-        holder.mTextView2.setText(mDataset.get(position).getLesson_name());
+        holder.mTextView.setText(mDataset.get(position).getLessonTime());
+        holder.mTextView2.setText(mDataset.get(position).getLessonName());
 
     }
 

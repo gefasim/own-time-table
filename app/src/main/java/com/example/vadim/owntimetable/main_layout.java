@@ -6,22 +6,21 @@ import android.os.Bundle;
 
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
+
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.vadim.owntimetable.fragments.DateRangePickerFragment;
+import com.example.vadim.owntimetable.models.Lesson;
 import com.example.vadim.owntimetable.models.TimePeriod;
-import com.example.vadim.owntimetable.models.TimeTableDayModel;
 import com.example.vadim.owntimetable.repository.Repository;
 
 import java.util.ArrayList;
@@ -65,71 +64,37 @@ public class main_layout extends AppCompatActivity implements DateRangePickerFra
             makeEmptyRecyclerView();
         }
 
-        Log.e("Dir main", getApplicationContext().getFilesDir() + "");
+        final SwipeRefreshLayout refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        refreshLayout.setColorSchemeResources(R.color.blue, R.color.green, R.color.orange);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (isConn()){
+                    makeRecyclerView();
+                } else {
+                    Toast.makeText(getApplicationContext(), "No internet connection", Toast.LENGTH_SHORT).show();
+                }
+                refreshLayout.setRefreshing(false);
+            }
+        });
 
-        {
-    /*    try {
-            // отрываем поток для записи
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(openFileOutput("FFile", MODE_PRIVATE)));
-            // пишем данные
-            bw.write("Содержимое файла");
-            // закрываем поток
 
-            bw.close();
-            Log.d("dd", "Файл записан");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
-
-        /*writeToFile(null);
-        writeToFile2();*/
-
-            /*  private void writeToFile2() {
-        String filename = "myfile222";
-        String string = "Hello world!";
-        FileOutputStream outputStream;
-
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_APPEND);
-            outputStream.write(string.getBytes());
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void writeToFile(View v) {
-
-        Log.d("FFF", "writeToFile");
-
-        String string = "My test string";
-
-        try {
-            FileOutputStream outputStream = openFileOutput("mFileName.txt", MODE_PRIVATE);
-            outputStream.write(string.getBytes());
-            outputStream.close();
-
-        } catch (Exception e) {
-            Log.d("FFF", "Произошла ошибка при записи");
-        }
-    }
-*/
-
-        }
 
     }
 
     private void makeEmptyRecyclerView() {
-        List<TimeTableDayModel> emptyList = new ArrayList<>();
+        List<Lesson> emptyList = new ArrayList<>();
         mLayoutManager = new GridLayoutManager(this, 2);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new RecyclerAdapter(rep.getFromJSON(), R.layout.card);
+        if (rep.getFromJSON() != null) {
+            mAdapter = new RecyclerAdapter(rep.getFromJSON(), R.layout.card);
+        } else {
+            mAdapter = new RecyclerAdapter(emptyList, R.layout.card);
+        }
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     private void makeRecyclerView() {

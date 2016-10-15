@@ -16,6 +16,7 @@ import java.net.URL;
 
 /**
  * Created by root on 9/3/16.
+ *
  */
 public class HttpHtmlAsyncGetter extends AsyncTask<Void, Void, String> {
     private String params = "faculty=0&teacher=&n=700&group=%CA%CD%B2%D2-31%B3%ED%F2&sdate=";

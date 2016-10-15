@@ -48,21 +48,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex dex="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-22.0.0_08ab47279993fb6f9d9b09e04100a04b29e7d26a.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
         <dex dex="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_e7fad3d15e1b074f09095705494990c4895d8ad6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-22.0.0_08ab47279993fb6f9d9b09e04100a04b29e7d26a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="9f73c7c29ca4978842db1db986629e92ab08d607">
+        sha1="15550e60314d6169e8525dcf03e793b9fe1bfda0">
         <dex dex="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_0a92597a9ced06e95483d5ddd23afb6ba583ca53.jar" />
     </item>
     <item
@@ -196,7 +196,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="98ba604413542f24d504a67d29afd103ff4aae4e">
+        sha1="bc652698e9e94817c96042cf8220f15d623c1ebb">
         <dex dex="C:\Users\vov96.HOST\MY_timetable\own-time-table\app\build\intermediates\pre-dexed\debug\instant-run_e3d586d95de68527344e2a56dd42707f0075ba5b.jar" />
     </item>
     <item
